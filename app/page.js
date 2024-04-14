@@ -1,6 +1,13 @@
 const Home = () => {
   return (
-    <h1>Hi from ./app/page.js!</h1>
+    <div>
+
+    <h2>Guarducci Associates</h2>
+    <h1>WELCOME</h1>
+    <h3>Guarducci Associates</h3>
+    <p>Stained glass restoration and repair</p>
+    </div>
+
   );
 }
 
