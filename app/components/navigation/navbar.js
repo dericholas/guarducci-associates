@@ -11,7 +11,7 @@ const NavBar = () => {
 
     return (
         <div className="navbar">
-            <h1 className="navbar-logo" onClick={goToHome}>Guarducci Associates</h1>
+            <img className="navbar-logo" onClick={goToHome} src="/images/guarducci-logo.png"/>
             <ul className="navbar-menu">
                 <li> <Link href="/about" className="navbar-link">About</Link> </li>
                 <li> <Link href="/services" className="navbar-link">Services</Link> </li> 
