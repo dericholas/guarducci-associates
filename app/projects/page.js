@@ -179,21 +179,5 @@ const Projects = () => {
           </ModalGateway>
         </div>
       );
-    // return (
-    //     <div>
-    //         <h1>Projects here</h1>
-    //         <PhotoAlbum
-    //             layout="rows"
-    //             photos={photos}
-    //             spacing={20}
-    //             padding={20}
-    //             targetRowHeight={200}
-    //             renderContainer={renderContainer}
-    //             renderRowContainer={renderRowContainer}
-    //             renderPhoto={renderPhoto}
-    //         />
-
-    //     </div>
-    // )
 }
 export default Projects
