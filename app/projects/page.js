@@ -1,6 +1,5 @@
 'use client'
 import React, { useState, useCallback } from "react";
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
