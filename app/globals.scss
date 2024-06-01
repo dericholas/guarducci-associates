@@ -101,12 +101,31 @@ body {
     margin-top: auto;
   }
 }
-.projects-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 70vw;
-  margin: 0 auto;
+
+.projects-page {
+  &__title {
+    text-align: center;
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 1rem;
+    row-gap: 3rem;
+    &__tile {
+      padding: 1.5rem 3rem;
+      border: .25rem solid black;
+      border-radius: 1rem;
+      width: fit-content;
+      text-align: center;
+      &__thumbnail {
+        height: 250px;
+        width: 250px;
+      }
+    }
+  }
 }
 
 
