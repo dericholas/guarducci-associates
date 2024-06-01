@@ -54,8 +54,7 @@ const About = () => {
         <h1>About Us</h1>
         <div className="about-bio">
           <h3>
-            Empowering Preservation: Our Commitment to 
-            Stained Glass Artistry and Cultural Heritage.
+            Empowering Preservation
           </h3>
           <p>
             At our core, our mission is to safeguard and 
