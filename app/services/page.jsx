@@ -3,7 +3,7 @@ import React from "react";
 const ServicesPage = () => {
     return (
         <div className="services">
-            <h1>Our Services</h1>\
+            <h1>Our Services</h1>
             
             <p>At Guarducci Associates, we specialize in the meticulous restoration of stained glass windows, ensuring they retain their beauty and historical significance for generations to come. Our team of skilled artisans combines traditional techniques with modern conservation practices to restore stained glass to its original glory.</p>
             
