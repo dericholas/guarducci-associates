@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 const About = () => {
-  const [currentValueIndex, setCurrentValueIndex] = useState()
+  const [currentValueIndex, setCurrentValueIndex] = useState(null)
+  const [selectedValueBody, setSelectedValueBody] = useState("")
   const valueData = [
     {
       title: "Integrity",
@@ -34,30 +35,55 @@ const About = () => {
       body: "We embrace and celebrate difference. We depend on different and sometimes clashing world views to provide the most useful and creative work for our clients. We work everyday to create an environment where creative friction sparks competing ideas."
     }
   ]
-  const handleClick = (index) => {
-    setCurrentValueIndex(index)
+  const clearSelected = () => {
+    setCurrentValueIndex(null) 
+    setSelectedValueBody(null)
   }
+  const handleClick = (index) => {
+    if(currentValueIndex === index) {
+      setCurrentValueIndex(null)
+      setSelectedValueBody("")
+    } else {
+      setCurrentValueIndex(index)
+      setSelectedValueBody(valueData[index].body)
+    }
+  }
+  // const valueTiles = valueData.map((value, index) => {
+  //   return (
+  //     <li 
+  //       key={index}
+  //       onClick={() => handleClick(index)}
+  //       style={{color: index === currentValueIndex ? "blue" : "white"}}
+  //       className="value-item"
+  //     >
+  //       <h5 className="value-name">{value.title}</h5>
+  //       <div className="text-container">
+  //         <p className="selected-value-body">{index === currentValueIndex ? value.body : null }</p>
+  //       </div>
+  //     </li>
+  //   )
+  // })
   const valueTiles = valueData.map((value, index) => {
     return (
-      <li 
+      <h5 
         key={index}
         onClick={() => handleClick(index)}
         style={{color: index === currentValueIndex ? "blue" : "white"}}
+        className="value-name"
       >
         {value.title}
-        <p>{index === currentValueIndex ? value.body : null }</p>
-      </li>
+      </h5>
     )
   })
     return (
       <div className="about">
-        <h1>About Us</h1>
+        <h1 className="page-header">About Us</h1>
         <div className="about-bio">
-          <h3>
-            Empowering Preservation: Our Commitment to 
-            Stained Glass Artistry and Cultural Heritage.
+          <h3 className="bio-header">
+            Empowering Preservation-<br/>Our Commitment to 
+            Stained Glass Artistry and Cultural Heritage
           </h3>
-          <p>
+          <p className="bio-text">
             At our core, our mission is to safeguard and 
             celebrate the intricate beauty of stained glass 
             artistry. We strive to preserve cultural heritage 
@@ -70,13 +96,16 @@ const About = () => {
           </p>
         </div>
         <div className="about-values">
-          <h3>
+          <h3 className="values-bio">
             Our shared values influence the work we do, and 
             the impact we hope to achieve.
           </h3>
-          <ul>
-            {valueTiles}
-          </ul>
+          <div className="values-container">
+            <ul className="value-list">
+              {valueTiles}
+            </ul>
+            <p className="selected-value-body"> {selectedValueBody} </p>
+          </div>
 
         </div>
         
