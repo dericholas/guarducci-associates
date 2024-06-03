@@ -162,10 +162,7 @@ body {
         width: 60%;
         font-size: 1.25rem;
       }
-    }
-
-      // }
-      
+    }     
   }
 }
 .services {
@@ -173,6 +170,34 @@ body {
   // padding-top: 5rem;
   h1 {
     margin-top: auto;
+  }
+  .restoration-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__list {
+      display: block;
+      list-style: none;
+      text-align: left;
+      width: 35%;
+      &__item {
+        &__title {
+          font-size: 1.5rem; 
+          cursor: pointer;
+          user-select: none;
+        }
+        &__body {
+          display: block;
+          padding: 5rem;
+          width: 60%;
+          font-size: 1.25rem;
+        }
+      }
+    }
+    &__mobile-list {
+      display: none;
+    }
+
   }
 }
 
@@ -267,6 +292,32 @@ body {
       }
     }
   }
+  .services {
+
+    .restoration-steps {
+      &__list {
+        display: none;
+        &__item {
+          &__body {
+            display: none;
+          }
+        }
+      }
+        &__mobile-list {
+          display: block;
+          &__item {
+            &__title {
+              cursor: pointer;
+              user-select: none;
+            }
+            &__body {
+              display: block;
+            }
+          }
+        }
+        
+    }
+}
 
 }
 
