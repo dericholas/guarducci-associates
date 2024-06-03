@@ -1,6 +1,29 @@
 import React from "react";
 
 const ServicesPage = () => {
+    const restorationSteps = [
+        {
+            title: "Conservation",
+            body: "Each restoration project is carefully planned and executed, involving the stabilization, then removal of the stained glass for off-site work to allow for detailed conservation efforts. We ensure that vacant openings are securely covered during the restoration process to protect the surrounding environment."
+        },
+        {
+            title: "Disassembly",
+            body: "Off-site work begins with disassembly through careful removal of the old lead work. Each piece of glass is then meticulously cleaned to assist with identifying cracks or breaks, and maintaining the original colors upon reinstallation"
+        },
+        {
+            title: "Choosing the right professional",
+            body: "Selecting the right professional for your stained glass restoration is crucial. At [Your Company Name], we invite you to explore our portfolio of past projects, speak with our team, and request references to understand our commitment to quality, craftsmanship, and customer satisfaction. We are proud members of the Stained Glass Association and adhere to the highest standards of conservation and restoration."
+        },
+        {
+            title: "Releading",
+            body: "Replacing the cames (metal strips) that hold the glass together, ensuring structural integrity."
+        },
+        {
+            title: "Maintenance and Preservation",
+            body: "Beyond restoration, we also offer guidance on the maintenance and preservation of stained glass. Regular care and proper repair can significantly extend the life of your stained glass, preventing the need for costly repairs in the future."
+        }
+    ]
+
     return (
         <div className="services">
             <h1>Our Services</h1>
