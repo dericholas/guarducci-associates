@@ -1,6 +1,9 @@
-import React from "react";
+'use client'
+import React, { useState } from "react";
 
 const ServicesPage = () => {
+    const [currentStepIndex, setCurrentStepIndex] = useState(null)
+    const [selectedStepBody, setSelectedStepBody] = useState("")
     const restorationSteps = [
         {
             title: "Conservation",
@@ -23,6 +26,45 @@ const ServicesPage = () => {
             body: "Beyond restoration, we also offer guidance on the maintenance and preservation of stained glass. Regular care and proper repair can significantly extend the life of your stained glass, preventing the need for costly repairs in the future."
         }
     ]
+    const clearSelected = () => {
+      setCurrentStepIndex(null) 
+      setSelectedStepBody("")
+    }
+    const handleClick = (index) => {
+      if(currentStepIndex === index) {
+        clearSelected()
+      } else {
+        console.log("Current index:", index);
+        console.log("Restoration Steps:", restorationSteps);
+        console.log("Step at index:", restorationSteps[index]);
+        setCurrentStepIndex(index)
+        setSelectedStepBody(restorationSteps[index].body)
+      }
+    }
+    const stepTiles = restorationSteps.map((step, index) => {
+        return (
+            <li key={index}
+            onClick={() => handleClick(index)}
+            style={{color: index === currentStepIndex ? "blue" : "white"}}
+            className="restoration-steps__list__item"
+            >
+                <h4 className="restoration-steps__list__item__title">{step.title}</h4>
+            </li>
+        )
+    })
+        const mobileStepTiles = restorationSteps.map((step, index) => {
+        return (
+            <li key={index}
+            onClick={() => handleClick(index)}
+            style={{color: index === currentStepIndex ? "blue" : "white"}}
+            className="restoration-steps__mobile-list__item"
+            >
+                <h4 className="restoration-steps__mobile-list__item__title"
+                >{step.title}</h4>
+                {index === currentStepIndex ? <p className="restoration-steps__mobile-list__item__body">{step.body}</p> : null}
+            </li>
+        )
+    })
 
     return (
         <div className="services">
@@ -35,7 +77,7 @@ const ServicesPage = () => {
         
             <h3>Restoration Process</h3>
             <h6>Our restoration process is designed to address both minor and significant issues with stained glass. This includes:</h6>
-
+{/* 
             <h4>Conservation</h4>
             <p>Each restoration project is carefully planned and executed, involving the stabilization, then removal of the stained glass for off-site work to allow for detailed conservation efforts. We ensure that vacant openings are securely covered during the restoration process to protect the surrounding environment.</p>
 
@@ -52,8 +94,13 @@ const ServicesPage = () => {
             <p>We offer comprehensive insurance coverage for all aspects of the restoration process, including transportation and installation. This ensures that you are protected against any potential damages that may occur during the restoration of your stained glass.</p>
 
             <h4>Maintenance and Preservation </h4>
-            <p>Beyond restoration, we also offer guidance on the maintenance and preservation of stained glass. Regular care and proper repair can significantly extend the life of your stained glass, preventing the need for costly repairs in the future.</p>
-
+            <p>Beyond restoration, we also offer guidance on the maintenance and preservation of stained glass. Regular care and proper repair can significantly extend the life of your stained glass, preventing the need for costly repairs in the future.</p> */}
+            <div className="restoration-steps">
+            <ul className="restoration-steps__mobile-list">{mobileStepTiles}</ul>
+            <ul className="restoration-steps__list">{stepTiles}</ul>
+            <p className="restoration-steps__list__item__body">{selectedStepBody}</p>
+            </div>
+            
             <h4>Still Have Questions?</h4>
             <p>To learn more about our stained glass restoration services or to discuss your project, please contact us today. We look forward to helping you preserve and celebrate the beauty of stained glass in your community.</p>
         
