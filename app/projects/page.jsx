@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useCallback } from "react";
-import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
 import ProjectGallery from "../components/ProjectGallery";
+import { projects } from "../image-data";
+import ImageSlider from "../components/image slider/ImageSlider";
+
 
 const Projects = () => {
   const photos = [
@@ -147,23 +148,40 @@ const Projects = () => {
       width: 750,
     },
   ];
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentProject, setCurrentProject] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-  const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
+  const passIndex = (tileIndex) => {
+    setCurrentProject(tileIndex)
+  }
+  
+  const openLightbox = (index) => {
+    setCurrentProject(index);
     setViewerIsOpen(true);
-  }, []);
-
+  }
+  
   const closeLightbox = () => {
-    setCurrentImage(0);
+    // setCurrentProject(null);
     setViewerIsOpen(false);
   };
+  console.log("current project from page:", currentProject) 
+  console.log("viewerIsOpen:", viewerIsOpen) 
 
   return (
     <div className="projects-page">
       <h1 className="projects-page__title">Our Projects</h1>
-      <ProjectGallery />
+      <ProjectGallery projects={projects} openLightbox={openLightbox} />
+      {!!viewerIsOpen && <div className="overlay">
+        <div 
+          style={{
+            maxWidth: "1200px",
+            width: "100%",
+            aspectRatio: "10 / 6",
+            margin: "0 auto",
+        }}>
+          <ImageSlider imageUrls={projects[currentProject].photos} closeLightbox={closeLightbox} />
+        </div>
+      </div>}
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import { projects } from "../image-data";
 import ProjectTile from "./ProjectTile";
 
-export default function ProjectGallery() {
-    const projectList = projects.map((project) => {
-        return <ProjectTile key={project.id} project={project}/>;
+export default function ProjectGallery({ projects, openLightbox }) {
+    const projectList = projects.map((project, index) => {
+        return <ProjectTile key={project.id} index={index} project={project} openLightbox={openLightbox}/>;
     });
 
     return (
