@@ -207,6 +207,26 @@ body {
     text-align: left;
     font-size: 4rem;
   }
+  .projects-container {
+    display: flex;
+    vertical-align: top;
+    &__card {
+      img {
+        display: none;
+
+        height: 500px;
+      }
+    }
+    &__list {
+      display: inline-block;
+      img {
+        display: none;
+      } 
+      p {
+        display: none;
+      }
+    }
+  }
 
   &__gallery {
     display: grid;

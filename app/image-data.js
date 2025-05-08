@@ -1,6 +1,7 @@
 export const projects = [
     {
         id: "1",
+        active: true,
         location: "Binghamton",
         description: "This is a description.",
         photos: [
@@ -13,6 +14,7 @@ export const projects = [
     },
     {
         id: "2",
+        active: true,
         location: "ckp Ludlow",
         description: "This is a description.",
         photos: [
@@ -25,6 +27,7 @@ export const projects = [
     },
     {
         id: "3",
+        active: true,
         location: "IC Ludlow",
         description: "This is a description.",
         photos: [
@@ -37,6 +40,7 @@ export const projects = [
     },
     {
         id: "4",
+        active: false,
         location: "Mt Holyoke",
         description: "This is a description.",
         photos: [
@@ -49,6 +53,7 @@ export const projects = [
     },
     {
         id: "5",
+        active: true,
         location: "Pittsfield",
         description: "This is a description.",
         photos: [
@@ -61,6 +66,7 @@ export const projects = [
     },
     {
         id: "6",
+        active: true,
         location: "selkirk",
         description: "This is a description.",
         photos: [
@@ -73,6 +79,7 @@ export const projects = [
     },
     {
         id: "7",
+        active: false,
         location: "Springfield",
         description: "This is a description.",
         photos: [
@@ -85,6 +92,7 @@ export const projects = [
     },
     {
         id: "8",
+        active: false,
         location: "vent repair",
         description: "This is a description.",
         photos: [
@@ -97,6 +105,7 @@ export const projects = [
     }, 
     {
         id: "9",
+        active: false,
         location: "Washington",
         description: "This is a description.",
         photos: [
