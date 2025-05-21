@@ -1,4 +1,4 @@
-import { projects } from "../image-data";
+import { projects } from "../app/image-data";
 import ProjectTile from "./ProjectTile";
 
 export default function ProjectGallery({ projects, openLightbox }) {

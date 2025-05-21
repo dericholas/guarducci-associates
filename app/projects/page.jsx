@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useCallback } from "react";
-import ProjectGallery from "../components/ProjectGallery";
+import ProjectGallery from "../../archive/ProjectGallery";
 import { projects } from "../image-data";
 import ImageSlider from "../components/image slider/ImageSlider";
-import ProjectsList from "../components/ProjectsList";
-import ProjectCard from "../components/ProjectCard";
+import ProjectsList from "../../archive/ProjectsList";
+import ProjectCard from "../../archive/ProjectCard";
 
 
 const Projects = () => {
